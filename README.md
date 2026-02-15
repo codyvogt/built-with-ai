@@ -12,7 +12,7 @@ This site is hosted on GitHub Pages. To deploy:
 4. Select the main branch and / (root) folder
 5. Click Save
 
-The site will be available at https://yourusername.github.io/built-with-ai/
+The site will be available at `https://builtwithai.ca`
 
 ## Contact
 
