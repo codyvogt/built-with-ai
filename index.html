@@ -32,7 +32,7 @@
                 <li><a href="#problem">Why Custom?</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                <li><a href="#audit" class="nav-cta">Free Audit</a></li>
             </ul>
         </div>
     </nav>
@@ -59,8 +59,8 @@
                 We use AI to build custom software solutions designed <em>exactly</em> for your business.
             </p>
             <div class="hero-cta animate-on-scroll">
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Start Your Project
+                <a href="#audit" class="btn btn-primary btn-lg">
+                    Get Your Free Audit
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="#problem" class="btn btn-ghost btn-lg">Learn More</a>
@@ -243,14 +243,97 @@
         </div>
     </section>
 
+    <!-- Free Software Audit Section -->
+    <section class="section audit-section" id="audit">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">Free Offer</span>
+                <h2 class="section-title">Get Your Free<br><span class="gradient-text">Software Audit</span></h2>
+                <p class="section-desc">Find out exactly how much you're spending on software subscriptions &mdash; and how much you could save with a custom-built solution. No strings attached.</p>
+            </div>
+            <div class="audit-grid">
+                <div class="audit-benefits animate-on-scroll">
+                    <div class="audit-benefit">
+                        <div class="audit-benefit-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        </div>
+                        <div>
+                            <h4>Subscription Cost Breakdown</h4>
+                            <p>We'll map out every SaaS tool you're paying for and calculate your true annual software spend.</p>
+                        </div>
+                    </div>
+                    <div class="audit-benefit">
+                        <div class="audit-benefit-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div>
+                            <h4>Savings Estimate</h4>
+                            <p>See how quickly a custom solution pays for itself compared to ongoing subscription costs.</p>
+                        </div>
+                    </div>
+                    <div class="audit-benefit">
+                        <div class="audit-benefit-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div>
+                            <h4>Custom Solution Blueprint</h4>
+                            <p>Get a high-level overview of what a custom-built replacement could look like for your business.</p>
+                        </div>
+                    </div>
+                    <div class="audit-benefit">
+                        <div class="audit-benefit-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <h4>30-Minute Call</h4>
+                            <p>We'll walk you through the results in a quick, no-pressure video call. Zero obligation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="audit-form-card animate-on-scroll">
+                    <div class="audit-form-header">
+                        <div class="audit-price-badge">100% Free</div>
+                        <h3>Request Your Audit</h3>
+                        <p>Takes 60 seconds. We'll follow up within 24 hours.</p>
+                    </div>
+                    <form class="audit-form" id="auditForm" action="https://formspree.io/f/xplaceholder" method="POST">
+                        <input type="hidden" name="form_type" value="software_audit">
+                        <div class="form-group">
+                            <label for="audit-name">Your Name</label>
+                            <input type="text" id="audit-name" name="name" required placeholder="Jane Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-email">Email Address</label>
+                            <input type="email" id="audit-email" name="email" required placeholder="jane@yourbusiness.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-business">Business Name</label>
+                            <input type="text" id="audit-business" name="business" required placeholder="Your Business Inc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="audit-tools">Software Tools You Currently Use</label>
+                            <textarea id="audit-tools" name="current_tools" rows="3" placeholder="e.g. Salesforce, QuickBooks, Monday.com, Mailchimp..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full" id="auditSubmitBtn">
+                            <span class="btn-text">Get My Free Audit</span>
+                            <span class="btn-loading">Sending...</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </button>
+                        <p class="audit-form-note">&#x1F512; No spam. No obligation. Just insights.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="section cta-section">
         <div class="container">
             <div class="cta-card animate-on-scroll">
                 <h2>Stop Renting Software.<br><span class="gradient-text">Start Owning It.</span></h2>
                 <p>Every month you spend on subscriptions for tools that don't quite fit is money wasted. Let's build something that's 100% yours &mdash; designed for the way <em>your</em> business works.</p>
-                <a href="#contact" class="btn btn-primary btn-lg">
-                    Let's Talk
+                <a href="#audit" class="btn btn-primary btn-lg">
+                    Get Your Free Audit
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
             </div>

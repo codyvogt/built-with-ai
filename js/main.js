@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScrollAnimations();
     initContactForm();
+    initAuditForm();
     initSmoothScroll();
 });
 
@@ -118,6 +119,59 @@ function initContactForm() {
 
         } catch (error) {
             console.error('Form submission error:', error);
+            alert('Something went wrong. Please email us directly at info@builtwithai.ca');
+        } finally {
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+        }
+    });
+}
+
+// ===== Audit Form =====
+function initAuditForm() {
+    const form = document.getElementById('auditForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('auditSubmitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.7';
+
+        try {
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const business = formData.get('business');
+            const tools = formData.get('current_tools');
+
+            const subject = encodeURIComponent('Free Software Audit Request - ' + name + (business ? ' (' + business + ')' : ''));
+            const body = encodeURIComponent(
+                'SOFTWARE AUDIT REQUEST\n' +
+                '=====================\n\n' +
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Business: ' + (business || 'N/A') + '\n\n' +
+                'Current Software Tools:\n' + (tools || 'Not specified')
+            );
+
+            window.location.href = 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
+
+            setTimeout(() => {
+                form.reset();
+                document.getElementById('successModal').classList.add('active');
+            }, 500);
+
+        } catch (error) {
+            console.error('Audit form submission error:', error);
             alert('Something went wrong. Please email us directly at info@builtwithai.ca');
         } finally {
             btnText.style.display = 'inline';
