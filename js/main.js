@@ -153,14 +153,14 @@ function initAuditForm() {
             const business = formData.get('business');
             const tools = formData.get('current_tools');
 
-            const subject = encodeURIComponent('Free Software Audit Request - ' + name + (business ? ' (' + business + ')' : ''));
+            const subject = encodeURIComponent('Free AI Opportunity Audit Request - ' + name + (business ? ' (' + business + ')' : ''));
             const body = encodeURIComponent(
-                'SOFTWARE AUDIT REQUEST\n' +
-                '=====================\n\n' +
+                'AI OPPORTUNITY AUDIT REQUEST\n' +
+                '============================\n\n' +
                 'Name: ' + name + '\n' +
                 'Email: ' + email + '\n' +
                 'Business: ' + (business || 'N/A') + '\n\n' +
-                'Current Software Tools:\n' + (tools || 'Not specified')
+                'Tools, Workflows, or AI Ideas:\n' + (tools || 'Not specified')
             );
 
             window.location.href = 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
