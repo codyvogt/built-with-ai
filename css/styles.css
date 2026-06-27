@@ -139,20 +139,19 @@ ul { list-style: none; }
 }
 
 .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    padding: 5px 10px;
-    background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: transform 0.2s ease;
     z-index: 1001;
 }
 
 .logo:hover {
     transform: translateY(-1px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
 }
 
 .logo-image {
@@ -160,6 +159,8 @@ ul { list-style: none; }
     width: auto;
     height: 44px;
     object-fit: contain;
+    opacity: 0.96;
+    filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(53, 136, 255, 0.2));
 }
 
 .footer-brand .logo-image {
@@ -1439,10 +1440,11 @@ select:focus-visible {
 }
 
 .logo {
-    padding: 4px 9px;
-    border-color: rgba(255, 255, 255, 0.55);
-    border-radius: 11px;
-    box-shadow: 0 8px 24px rgba(0, 5, 20, 0.2);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .logo-image {
@@ -1806,7 +1808,7 @@ select:focus-visible {
 }
 
 .footer-brand .logo-image {
-    height: 56px;
+    height: 50px;
 }
 
 .modal {
@@ -2005,7 +2007,7 @@ select:focus-visible {
     }
 
     .footer-brand .logo-image {
-        height: 48px;
+        height: 46px;
     }
 }
 
@@ -2051,7 +2053,7 @@ select:focus-visible {
     }
 
     .footer-brand .logo-image {
-        height: 44px;
+        height: 42px;
     }
 }
 
