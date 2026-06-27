@@ -160,7 +160,7 @@ ul { list-style: none; }
     height: 44px;
     object-fit: contain;
     opacity: 0.96;
-    filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(53, 136, 255, 0.2));
+    filter: drop-shadow(0 0 12px rgba(53, 136, 255, 0.2));
 }
 
 .footer-brand .logo-image {
