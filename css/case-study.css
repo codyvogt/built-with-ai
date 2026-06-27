@@ -307,3 +307,132 @@
         margin: 0 auto;
     }
 }
+
+/* ===== Built with AI.ca Case Study Refresh ===== */
+.case-study-hero {
+    min-height: 100svh;
+}
+
+.case-study-hero .hero-subtitle strong {
+    color: #8cc3ff;
+}
+
+.benefits-grid,
+.faq-grid {
+    gap: 22px;
+}
+
+.benefit-card {
+    padding: 34px;
+    border-color: rgba(140, 178, 235, 0.12);
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(14, 36, 72, 0.78), rgba(7, 21, 44, 0.72));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025), var(--shadow-sm);
+}
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(74, 143, 245, 0.42);
+    box-shadow: var(--shadow-glow);
+}
+
+.benefit-icon {
+    border: 1px solid rgba(100, 161, 255, 0.18);
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(22, 119, 255, 0.16), rgba(124, 58, 237, 0.08));
+    color: #6faaff;
+}
+
+.section-dark {
+    background:
+        linear-gradient(180deg, rgba(11, 29, 58, 0.54), rgba(6, 17, 36, 0.72)),
+        var(--bg-secondary);
+    border-block: 1px solid rgba(140, 178, 235, 0.07);
+}
+
+.requirements-grid {
+    max-width: 860px;
+    gap: 16px;
+}
+
+.requirement-item {
+    padding: 26px;
+    border-color: rgba(140, 178, 235, 0.12);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(14, 36, 72, 0.78), rgba(7, 21, 44, 0.72));
+    box-shadow: var(--shadow-sm);
+}
+
+.requirement-item:hover {
+    transform: translateX(5px);
+    border-color: rgba(74, 143, 245, 0.4);
+}
+
+.requirement-number {
+    border-radius: 13px;
+    box-shadow: 0 10px 25px rgba(22, 119, 255, 0.22);
+}
+
+.application-form-wrapper {
+    max-width: 860px;
+    border-color: rgba(83, 150, 255, 0.36);
+    background: linear-gradient(155deg, rgba(13, 34, 67, 0.94), rgba(5, 16, 35, 0.95));
+    box-shadow: 0 28px 80px rgba(0, 5, 20, 0.36);
+}
+
+.form-section-title {
+    color: #8cc3ff;
+    border-bottom-color: rgba(140, 178, 235, 0.12);
+}
+
+.form-group select {
+    min-height: 52px;
+    background-color: rgba(2, 10, 24, 0.62);
+    border-color: rgba(140, 178, 235, 0.16);
+}
+
+.form-group select:focus {
+    border-color: #3588ff;
+    box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.12);
+}
+
+.checkmark {
+    border-color: rgba(140, 178, 235, 0.3);
+    background: rgba(2, 10, 24, 0.42);
+}
+
+.faq-item {
+    padding: 30px;
+    border-color: rgba(140, 178, 235, 0.12);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(14, 36, 72, 0.78), rgba(7, 21, 44, 0.72));
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(74, 143, 245, 0.4);
+}
+
+@media (max-width: 768px) {
+    .case-study-hero {
+        min-height: auto;
+        padding-bottom: 68px;
+    }
+
+    .benefit-card,
+    .faq-item {
+        padding: 26px;
+    }
+
+    .application-form-wrapper {
+        padding: 28px 20px;
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .requirement-item {
+        padding: 22px;
+    }
+}

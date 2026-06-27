@@ -37,7 +37,9 @@ function initMobileMenu() {
     toggle.addEventListener('click', () => {
         toggle.classList.toggle('active');
         navLinks.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        const isOpen = navLinks.classList.contains('active');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close menu when clicking a link
@@ -45,8 +47,19 @@ function initMobileMenu() {
         link.addEventListener('click', () => {
             toggle.classList.remove('active');
             navLinks.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+            toggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            toggle.focus();
+        }
     });
 }
 
@@ -187,7 +200,14 @@ function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            const target = document.querySelector(href);
             if (target) {
                 const offset = 80;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
