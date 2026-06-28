@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Palette Mockups | Built with AI</title>
+    <meta name="description" content="Five sample company brand palettes and HTML website mockups for comparing visual directions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --page-bg: #f5f1ea;
+            --page-bg-2: #ebe4db;
+            --page-text: #132033;
+            --page-muted: #5f6c7d;
+            --page-line: rgba(19, 32, 51, 0.1);
+            --page-card: rgba(255, 255, 255, 0.74);
+            --page-shadow: 0 24px 80px rgba(22, 32, 46, 0.12);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --font-head: 'Space Grotesk', Inter, sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            color: var(--page-text);
+            background:
+                radial-gradient(circle at top left, rgba(120, 144, 255, 0.18), transparent 32%),
+                radial-gradient(circle at 90% 10%, rgba(97, 219, 209, 0.18), transparent 28%),
+                linear-gradient(180deg, var(--page-bg), var(--page-bg-2));
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .shell {
+            width: min(1240px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 32px 0 72px;
+        }
+
+        .hero {
+            display: grid;
+            gap: 28px;
+            padding: 28px;
+            border: 1px solid var(--page-line);
+            border-radius: 36px;
+            background: rgba(255, 255, 255, 0.58);
+            box-shadow: var(--page-shadow);
+            backdrop-filter: blur(18px);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(19, 32, 51, 0.06);
+            color: var(--page-muted);
+            font-size: 0.84rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6bb7ff, #61dbc1);
+            box-shadow: 0 0 0 4px rgba(97, 219, 193, 0.12);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            line-height: 1;
+            margin: 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 5.2rem);
+            line-height: 0.96;
+            letter-spacing: -0.05em;
+            max-width: 11ch;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 70ch;
+            color: var(--page-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .palette-card {
+            padding: 16px;
+            border-radius: 20px;
+            border: 1px solid var(--page-line);
+            background: rgba(255, 255, 255, 0.7);
+            display: grid;
+            gap: 12px;
+            min-height: 164px;
+        }
+
+        .palette-card h3 {
+            font-size: 1rem;
+            line-height: 1.1;
+        }
+
+        .palette-card p {
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: var(--page-muted);
+        }
+
+        .swatches {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .swatch {
+            height: 24px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        .mockups {
+            display: grid;
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .mockup {
+            position: relative;
+            overflow: hidden;
+            padding: 22px;
+            border-radius: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background:
+                radial-gradient(circle at 15% 10%, var(--glow-a), transparent 30%),
+                radial-gradient(circle at 85% 0%, var(--glow-b), transparent 26%),
+                linear-gradient(180deg, color-mix(in srgb, var(--bg) 94%, white 6%), var(--bg-2));
+            color: var(--text);
+            box-shadow: 0 30px 80px rgba(17, 24, 39, 0.22);
+        }
+
+        .mockup::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(circle at top, black 24%, transparent 78%);
+            opacity: 0.18;
+        }
+
+        .mockup-shell {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 18px;
+        }
+
+        .mockup-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 10px 14px;
+            border-radius: 20px;
+            background: color-mix(in srgb, var(--surface) 70%, transparent);
+            border: 1px solid var(--line);
+            backdrop-filter: blur(12px);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .brand-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            box-shadow: 0 10px 28px color-mix(in srgb, var(--accent) 28%, transparent);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .nav a:hover {
+            color: var(--text);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 14px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #fff;
+            border: 0;
+            box-shadow: 0 16px 32px color-mix(in srgb, var(--accent) 20%, transparent);
+        }
+
+        .mockup-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .mockup-hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .hero-copy, .hero-panel, .feature-card, .stat-card, .quote-card, .chart-card, .booking-card, .info-card {
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--line);
+            background: color-mix(in srgb, var(--surface) 74%, transparent);
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-copy {
+            padding: 26px;
+            display: grid;
+            gap: 18px;
+        }
+
+        .hero-copy h2 {
+            font-size: clamp(2rem, 4.6vw, 3.8rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+            max-width: 12ch;
+        }
+
+        .hero-copy p, .feature-card p, .quote-card p, .info-card p, .booking-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.97rem;
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .ghost-link {
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 8px 0;
+        }
+
+        .hero-panel {
+            padding: 18px;
+            display: grid;
+            gap: 12px;
+            align-content: space-between;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .metric {
+            padding: 14px;
+            border-radius: 18px;
+            background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+            border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+        }
+
+        .metric strong {
+            display: block;
+            font-family: var(--font-head);
+            font-size: 1.3rem;
+            letter-spacing: -0.04em;
+        }
+
+        .metric span {
+            display: block;
+            margin-top: 6px;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .feature-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .feature-card {
+            padding: 18px;
+            min-height: 124px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .feature-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 88%, white 12%), color-mix(in srgb, var(--accent-2) 82%, white 18%));
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            color: #fff;
+            box-shadow: 0 14px 26px color-mix(in srgb, var(--accent) 18%, transparent);
+        }
+
+        .mockup-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 0 2px;
+        }
+
+        .mockup-label h3 {
+            font-size: 1.45rem;
+            letter-spacing: -0.04em;
+        }
+
+        .palette-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            padding: 7px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .section-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 18px;
+        }
+
+        .chart-card {
+            padding: 20px;
+        }
+
+        .bars {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .bar-row {
+            display: grid;
+            grid-template-columns: 110px 1fr 52px;
+            gap: 12px;
+            align-items: center;
+            font-size: 0.84rem;
+            color: var(--muted);
+        }
+
+        .bar-track {
+            height: 10px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--surface-strong) 86%, transparent);
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+
+        .quote-card {
+            padding: 20px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .quote-card blockquote {
+            margin: 0;
+            font-family: var(--font-head);
+            font-size: 1.25rem;
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+        }
+
+        .persona {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 6px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-3));
+        }
+
+        .timeline {
+            display: grid;
+            gap: 10px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            align-items: center;
+            padding: 12px 14px;
+            border-radius: 16px;
+            background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+            border: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+            color: var(--muted);
+        }
+
+        .timeline-item strong {
+            color: var(--text);
+            font-size: 0.92rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 18px;
+        }
+
+        .info-card, .booking-card {
+            padding: 20px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-list div {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: color-mix(in srgb, var(--surface-strong) 90%, transparent);
+            border: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+            color: var(--muted);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .slot {
+            padding: 14px;
+            border-radius: 16px;
+            background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+            border: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+            display: grid;
+            gap: 8px;
+        }
+
+        .slot strong {
+            font-size: 0.95rem;
+        }
+
+        .slot span {
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        .footer-note {
+            margin-top: 22px;
+            text-align: center;
+            color: var(--page-muted);
+            font-size: 0.92rem;
+        }
+
+        .theme-aurora {
+            --bg: #07111d;
+            --bg-2: #0d1b2c;
+            --surface: #102238;
+            --surface-strong: #152a45;
+            --text: #eef6ff;
+            --muted: #9ab0cb;
+            --accent: #58e1c1;
+            --accent-2: #79a8ff;
+            --accent-3: #d6f46f;
+            --line: rgba(136, 177, 255, 0.14);
+            --glow-a: rgba(88, 225, 193, 0.22);
+            --glow-b: rgba(121, 168, 255, 0.18);
+        }
+
+        .theme-ember {
+            --bg: #1b1110;
+            --bg-2: #261614;
+            --surface: #31201c;
+            --surface-strong: #402824;
+            --text: #fff4ef;
+            --muted: #cfb5ac;
+            --accent: #ff8b6b;
+            --accent-2: #ffc46a;
+            --accent-3: #7dd6c6;
+            --line: rgba(255, 202, 176, 0.14);
+            --glow-a: rgba(255, 139, 107, 0.18);
+            --glow-b: rgba(255, 196, 106, 0.14);
+        }
+
+        .theme-tide {
+            --bg: #081825;
+            --bg-2: #0d2435;
+            --surface: #12293d;
+            --surface-strong: #18334a;
+            --text: #f3f8ff;
+            --muted: #a4bad1;
+            --accent: #4ed1ff;
+            --accent-2: #5277ff;
+            --accent-3: #9af6b2;
+            --line: rgba(138, 194, 255, 0.14);
+            --glow-a: rgba(78, 209, 255, 0.18);
+            --glow-b: rgba(82, 119, 255, 0.16);
+        }
+
+        .theme-citrus {
+            --bg: #1a1511;
+            --bg-2: #231b16;
+            --surface: #34271f;
+            --surface-strong: #443126;
+            --text: #fff9f0;
+            --muted: #d9c7b4;
+            --accent: #ffcc58;
+            --accent-2: #ff8f61;
+            --accent-3: #84e1a8;
+            --line: rgba(255, 218, 153, 0.14);
+            --glow-a: rgba(255, 204, 88, 0.18);
+            --glow-b: rgba(255, 143, 97, 0.14);
+        }
+
+        .theme-blush {
+            --bg: #17141b;
+            --bg-2: #211b26;
+            --surface: #2b2331;
+            --surface-strong: #382c42;
+            --text: #f9f2ff;
+            --muted: #d2bfdc;
+            --accent: #f68cae;
+            --accent-2: #d7a6ff;
+            --accent-3: #8fefe1;
+            --line: rgba(230, 190, 255, 0.14);
+            --glow-a: rgba(246, 140, 174, 0.18);
+            --glow-b: rgba(215, 166, 255, 0.16);
+        }
+
+        @media (max-width: 1100px) {
+            .palette-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .mockup-hero,
+            .hero-grid,
+            .dashboard-grid,
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-strip,
+            .booking-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            .shell {
+                width: min(100% - 20px, 1240px);
+                padding-top: 18px;
+                padding-bottom: 40px;
+            }
+
+            .hero,
+            .mockup {
+                border-radius: 24px;
+            }
+
+            .hero {
+                padding: 22px;
+            }
+
+            .hero h1 {
+                max-width: none;
+            }
+
+            .palette-grid,
+            .feature-strip,
+            .booking-grid,
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                gap: 10px 14px;
+            }
+
+            .mockup-topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .bar-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <section class="hero">
+            <span class="eyebrow">Sample brand palettes + HTML mockups</span>
+            <div class="hero-grid">
+                <div class="section-grid">
+                    <h1>Five visual directions for a company brand.</h1>
+                    <p>
+                        Each mockup below uses a different palette and layout so you can compare how the same company feels when the colors change.
+                        The examples are written in plain HTML and use a single reusable structure with palette variables.
+                    </p>
+                    <div class="cta-row">
+                        <a class="pill" href="#mockups">View the mockups</a>
+                        <a class="ghost-link" href="#palettes">See the palette set</a>
+                    </div>
+                </div>
+                <div class="quote-card" style="align-self: stretch;">
+                    <blockquote>Clean, reusable, and easy to swap into a real landing page or client concept.</blockquote>
+                    <p>
+                        Use these as starting points for pitch decks, brand exploration, or quick website prototypes.
+                    </p>
+                    <div class="timeline">
+                        <div class="timeline-item"><strong>Use case</strong><span>Startup, agency, services, product</span></div>
+                        <div class="timeline-item"><strong>Format</strong><span>Standalone HTML</span></div>
+                        <div class="timeline-item"><strong>Style</strong><span>Dark, bright, editorial, and warm options</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mockups" id="palettes">
+            <div class="palette-grid">
+                <article class="palette-card">
+                    <h3>Aurora Mint</h3>
+                    <p>Modern tech and AI consulting. Feels crisp, calm, and high trust.</p>
+                    <div class="swatches">
+                        <span class="swatch" style="background:#07111d"></span>
+                        <span class="swatch" style="background:#102238"></span>
+                        <span class="swatch" style="background:#58e1c1"></span>
+                        <span class="swatch" style="background:#79a8ff"></span>
+                        <span class="swatch" style="background:#d6f46f"></span>
+                    </div>
+                </article>
+                <article class="palette-card">
+                    <h3>Ember Slate</h3>
+                    <p>Premium industrial, construction, or operations brands with warmth and authority.</p>
+                    <div class="swatches">
+                        <span class="swatch" style="background:#1b1110"></span>
+                        <span class="swatch" style="background:#31201c"></span>
+                        <span class="swatch" style="background:#ff8b6b"></span>
+                        <span class="swatch" style="background:#ffc46a"></span>
+                        <span class="swatch" style="background:#7dd6c6"></span>
+                    </div>
+                </article>
+                <article class="palette-card">
+                    <h3>Coastal Tide</h3>
+                    <p>Finance, strategy, or data-heavy products with a polished, dependable feel.</p>
+                    <div class="swatches">
+                        <span class="swatch" style="background:#081825"></span>
+                        <span class="swatch" style="background:#12293d"></span>
+                        <span class="swatch" style="background:#4ed1ff"></span>
+                        <span class="swatch" style="background:#5277ff"></span>
+                        <span class="swatch" style="background:#9af6b2"></span>
+                    </div>
+                </article>
+                <article class="palette-card">
+                    <h3>Citrus Noir</h3>
+                    <p>Food, retail, or creative services with a bold, energetic personality.</p>
+                    <div class="swatches">
+                        <span class="swatch" style="background:#1a1511"></span>
+                        <span class="swatch" style="background:#34271f"></span>
+                        <span class="swatch" style="background:#ffcc58"></span>
+                        <span class="swatch" style="background:#ff8f61"></span>
+                        <span class="swatch" style="background:#84e1a8"></span>
+                    </div>
+                </article>
+                <article class="palette-card">
+                    <h3>Rose Quartz</h3>
+                    <p>Wellness, hospitality, and lifestyle brands with a softer premium edge.</p>
+                    <div class="swatches">
+                        <span class="swatch" style="background:#17141b"></span>
+                        <span class="swatch" style="background:#2b2331"></span>
+                        <span class="swatch" style="background:#f68cae"></span>
+                        <span class="swatch" style="background:#d7a6ff"></span>
+                        <span class="swatch" style="background:#8fefe1"></span>
+                    </div>
+                </article>
+            </div>
+
+            <article class="mockup theme-aurora" id="mockups">
+                <div class="mockup-shell">
+                    <div class="mockup-label">
+                        <h3>Aurora Mint - AI Studio Homepage</h3>
+                        <div class="palette-chips">
+                            <span class="chip">#07111D</span>
+                            <span class="chip">#58E1C1</span>
+                            <span class="chip">#79A8FF</span>
+                            <span class="chip">#D6F46F</span>
+                        </div>
+                    </div>
+                    <div class="mockup-topbar">
+                        <div class="brand"><span class="brand-mark"></span>Northstar AI</div>
+                        <div class="nav">
+                            <a href="#">Services</a>
+                            <a href="#">Work</a>
+                            <a href="#">Insights</a>
+                            <a class="pill" href="#">Book a call</a>
+                        </div>
+                    </div>
+                    <div class="mockup-hero">
+                        <div class="hero-copy">
+                            <span class="eyebrow" style="background: rgba(88, 225, 193, 0.12); color: var(--text);">Strategy + Automation</span>
+                            <h2>AI systems built around the way your team works.</h2>
+                            <p>Strong contrast, soft neon accents, and a data-first layout make this a good fit for a consultancy or software product.</p>
+                            <div class="cta-row">
+                                <a class="pill" href="#">Start a project</a>
+                                <a class="ghost-link" href="#">See examples</a>
+                            </div>
+                        </div>
+                        <aside class="hero-panel">
+                            <div class="metric-grid">
+                                <div class="metric"><strong>24%</strong><span>Faster cycle time</span></div>
+                                <div class="metric"><strong>11</strong><span>Ops workflows mapped</span></div>
+                                <div class="metric"><strong>92%</strong><span>Client retention</span></div>
+                                <div class="metric"><strong>6</strong><span>Active integrations</span></div>
+                            </div>
+                            <div class="quote-card" style="background: color-mix(in srgb, var(--surface-strong) 84%, transparent);">
+                                <blockquote>"A sharp, minimal boardroom look with subtle glow and lots of confidence."</blockquote>
+                                <p>Best for SaaS, AI consulting, or B2B services that want to feel modern and technical.</p>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="feature-strip">
+                        <article class="feature-card"><div class="feature-icon">A</div><h3>Workflow design</h3><p>Map the human steps before adding automation.</p></article>
+                        <article class="feature-card"><div class="feature-icon">B</div><h3>Agent ops</h3><p>Launch practical internal AI tools with guardrails.</p></article>
+                        <article class="feature-card"><div class="feature-icon">C</div><h3>Delivery speed</h3><p>Ship prototypes fast, then harden the good ideas.</p></article>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mockup theme-ember">
+                <div class="mockup-shell">
+                    <div class="mockup-label">
+                        <h3>Ember Slate - Operations and Manufacturing</h3>
+                        <div class="palette-chips">
+                            <span class="chip">#1B1110</span>
+                            <span class="chip">#FF8B6B</span>
+                            <span class="chip">#FFC46A</span>
+                            <span class="chip">#7DD6C6</span>
+                        </div>
+                    </div>
+                    <div class="mockup-topbar">
+                        <div class="brand"><span class="brand-mark"></span>Forge Works</div>
+                        <div class="nav">
+                            <a href="#">Capabilities</a>
+                            <a href="#">Projects</a>
+                            <a href="#">Safety</a>
+                            <a class="pill" href="#">Request a quote</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-grid">
+                        <div class="hero-copy">
+                            <span class="eyebrow" style="background: rgba(255, 139, 107, 0.12); color: var(--text);">Reliable, durable, premium</span>
+                            <h2>Industrial clarity with a warm, confident edge.</h2>
+                            <p>This version uses earthy surfaces, ember accents, and a structured composition that feels established and expensive.</p>
+                            <div class="cta-row">
+                                <a class="pill" href="#">View services</a>
+                                <a class="ghost-link" href="#">Download brochure</a>
+                            </div>
+                        </div>
+                        <div class="section-grid">
+                            <div class="chart-card">
+                                <h3 style="font-size:1.1rem; margin-bottom:10px;">Quarterly output</h3>
+                                <div class="bars">
+                                    <div class="bar-row"><span>Fabrication</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span>82%</span></div>
+                                    <div class="bar-row"><span>Install</span><div class="bar-track"><div class="bar-fill" style="width:66%"></div></div><span>66%</span></div>
+                                    <div class="bar-row"><span>Service</span><div class="bar-track"><div class="bar-fill" style="width:91%"></div></div><span>91%</span></div>
+                                </div>
+                            </div>
+                            <div class="quote-card">
+                                <blockquote>"Feels like an operations dashboard and a brand site at the same time."</blockquote>
+                                <div class="persona"><span class="avatar"></span><span>Plant manager, field service lead, procurement team</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-strip">
+                        <article class="feature-card"><div class="feature-icon">01</div><h3>Safety first</h3><p>High contrast and strong separation between modules.</p></article>
+                        <article class="feature-card"><div class="feature-icon">02</div><h3>Trust signals</h3><p>Metrics, certifications, and client proof stand out.</p></article>
+                        <article class="feature-card"><div class="feature-icon">03</div><h3>Practical CTA</h3><p>The call to action is direct and quote-driven.</p></article>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mockup theme-tide">
+                <div class="mockup-shell">
+                    <div class="mockup-label">
+                        <h3>Coastal Tide - Fintech and Advisory</h3>
+                        <div class="palette-chips">
+                            <span class="chip">#081825</span>
+                            <span class="chip">#4ED1FF</span>
+                            <span class="chip">#5277FF</span>
+                            <span class="chip">#9AF6B2</span>
+                        </div>
+                    </div>
+                    <div class="mockup-topbar">
+                        <div class="brand"><span class="brand-mark"></span>Clear Ledger</div>
+                        <div class="nav">
+                            <a href="#">Solutions</a>
+                            <a href="#">Security</a>
+                            <a href="#">Pricing</a>
+                            <a class="pill" href="#">Open account</a>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="hero-copy">
+                            <span class="eyebrow" style="background: rgba(78, 209, 255, 0.12); color: var(--text);">Data, finance, and precision</span>
+                            <h2>A calm financial interface with a product-led feel.</h2>
+                            <p>Bright cyan and blue accents bring a polished, analytical tone that works well for fintech, analytics, or enterprise software.</p>
+                            <div class="cta-row">
+                                <a class="pill" href="#">Get started</a>
+                                <a class="ghost-link" href="#">Read the security brief</a>
+                            </div>
+                        </div>
+                        <div class="section-grid">
+                            <div class="info-card">
+                                <h3 style="font-size:1.08rem;">Portfolio snapshot</h3>
+                                <div class="info-list">
+                                    <div><span>Assets under review</span><strong style="color:var(--text);">$12.4M</strong></div>
+                                    <div><span>Forecast confidence</span><strong style="color:var(--text);">98.1%</strong></div>
+                                    <div><span>Alerts resolved</span><strong style="color:var(--text);">37</strong></div>
+                                </div>
+                            </div>
+                            <div class="quote-card">
+                                <blockquote>"Very clean. It reads like a product that handles money without making it feel cold."</blockquote>
+                                <p>Good for advisory firms, SaaS dashboards, and any brand that needs trust plus speed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-strip">
+                        <article class="feature-card"><div class="feature-icon">UX</div><h3>Frictions removed</h3><p>Clear flows reduce anxiety and improve onboarding.</p></article>
+                        <article class="feature-card"><div class="feature-icon">UI</div><h3>Metric dense</h3><p>Great for charts, KPIs, and status-driven products.</p></article>
+                        <article class="feature-card"><div class="feature-icon">API</div><h3>Platform feel</h3><p>Works well when the website also needs to feel like software.</p></article>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mockup theme-citrus">
+                <div class="mockup-shell">
+                    <div class="mockup-label">
+                        <h3>Citrus Noir - Creative Studio and Retail</h3>
+                        <div class="palette-chips">
+                            <span class="chip">#1A1511</span>
+                            <span class="chip">#FFCC58</span>
+                            <span class="chip">#FF8F61</span>
+                            <span class="chip">#84E1A8</span>
+                        </div>
+                    </div>
+                    <div class="mockup-topbar">
+                        <div class="brand"><span class="brand-mark"></span>Sunroom Co.</div>
+                        <div class="nav">
+                            <a href="#">New</a>
+                            <a href="#">Shop</a>
+                            <a href="#">Journal</a>
+                            <a class="pill" href="#">Explore now</a>
+                        </div>
+                    </div>
+                    <div class="mockup-hero">
+                        <div class="hero-copy">
+                            <span class="eyebrow" style="background: rgba(255, 204, 88, 0.12); color: var(--text);">Editorial and energetic</span>
+                            <h2>Bold color, soft texture, and a retail-friendly layout.</h2>
+                            <p>This mockup feels brighter and more expressive. It suits lifestyle brands, studios, cafes, and anything with personality.</p>
+                            <div class="cta-row">
+                                <a class="pill" href="#">Shop the collection</a>
+                                <a class="ghost-link" href="#">Read the journal</a>
+                            </div>
+                        </div>
+                        <aside class="hero-panel">
+                            <div class="quote-card" style="background: color-mix(in srgb, var(--surface-strong) 86%, transparent);">
+                                <blockquote>"Feels like a magazine spread and a store at the same time."</blockquote>
+                                <p>Best for brands that need story, merchandising, and social shareability in one page.</p>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item"><strong>New arrivals</strong><span>12 drops this month</span></div>
+                                <div class="timeline-item"><strong>Stories</strong><span>Behind the scenes content</span></div>
+                                <div class="timeline-item"><strong>Store CTA</strong><span>Fast, simple, prominent</span></div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="feature-strip">
+                        <article class="feature-card"><div class="feature-icon">S</div><h3>Seasonal color</h3><p>Warm highlights add energy without looking loud.</p></article>
+                        <article class="feature-card"><div class="feature-icon">J</div><h3>Editorial rhythm</h3><p>Mixed content blocks keep the page feeling curated.</p></article>
+                        <article class="feature-card"><div class="feature-icon">P</div><h3>Conversion-ready</h3><p>Clear shop actions still stay front and center.</p></article>
+                    </div>
+                </div>
+            </article>
+
+            <article class="mockup theme-blush">
+                <div class="mockup-shell">
+                    <div class="mockup-label">
+                        <h3>Rose Quartz - Wellness and Hospitality</h3>
+                        <div class="palette-chips">
+                            <span class="chip">#17141B</span>
+                            <span class="chip">#F68CAE</span>
+                            <span class="chip">#D7A6FF</span>
+                            <span class="chip">#8FEFE1</span>
+                        </div>
+                    </div>
+                    <div class="mockup-topbar">
+                        <div class="brand"><span class="brand-mark"></span>Velvet Space</div>
+                        <div class="nav">
+                            <a href="#">Rooms</a>
+                            <a href="#">Spa</a>
+                            <a href="#">Dining</a>
+                            <a class="pill" href="#">Reserve</a>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="hero-copy">
+                            <span class="eyebrow" style="background: rgba(246, 140, 174, 0.12); color: var(--text);">Soft premium, elevated calm</span>
+                            <h2>A lighter, more intimate visual direction.</h2>
+                            <p>Blush and orchid tones create a refined, welcoming mood that works well for hospitality, wellness, beauty, or high-touch services.</p>
+                            <div class="cta-row">
+                                <a class="pill" href="#">Check availability</a>
+                                <a class="ghost-link" href="#">View amenities</a>
+                            </div>
+                        </div>
+                        <div class="section-grid">
+                            <div class="booking-card">
+                                <h3 style="font-size:1.08rem;">Tonight's openings</h3>
+                                <div class="booking-grid">
+                                    <div class="slot"><strong>Suite</strong><span>2 rooms open</span></div>
+                                    <div class="slot"><strong>Spa</strong><span>4 treatment slots</span></div>
+                                    <div class="slot"><strong>Dining</strong><span>6 tables</span></div>
+                                </div>
+                            </div>
+                            <div class="quote-card">
+                                <blockquote>"Warm, polished, and just enough luxury without feeling overdesigned."</blockquote>
+                                <p>Nice fit for brands that want elegance, softness, and a little editorial charm.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-strip">
+                        <article class="feature-card"><div class="feature-icon">H</div><h3>Hospitality feel</h3><p>Inviting spacing and rounded surfaces.</p></article>
+                        <article class="feature-card"><div class="feature-icon">W</div><h3>Wellness tone</h3><p>Muted contrast keeps the mood calm.</p></article>
+                        <article class="feature-card"><div class="feature-icon">B</div><h3>Booking first</h3><p>The reservation action stays obvious.</p></article>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <p class="footer-note">If you want, I can also turn these into five separate HTML files or make one of the palettes match a specific company style.</p>
+    </main>
+</body>
+</html>
