@@ -2071,9 +2071,10 @@ select:focus-visible {
 
 /* ===== Official Mint + Navy Brand Palette ===== */
 :root {
-    --brand-mint: #57ff8f;
-    --brand-mint-strong: #35e982;
-    --brand-mint-soft: #a7ffc4;
+    /* Muted mint shared by the website and its updated logo assets. */
+    --brand-mint: #6fd493;
+    --brand-mint-strong: #4fbd7a;
+    --brand-mint-soft: #a9dfbc;
     --brand-navy: #16364d;
     --brand-navy-deep: #081d2b;
     --brand-navy-mid: #102f43;
@@ -2086,14 +2087,14 @@ select:focus-visible {
     --text-primary: #f4fff8;
     --text-secondary: #bfd6cc;
     --text-muted: #7f9da6;
-    --accent-1: #57ff8f;
-    --accent-2: #35e982;
-    --accent-3: #a7ffc4;
-    --gradient-primary: linear-gradient(135deg, #57ff8f 0%, #35e982 52%, #a7ffc4 100%);
-    --gradient-glow: linear-gradient(135deg, rgba(87, 255, 143, 0.16), rgba(53, 233, 130, 0.08));
+    --accent-1: #6fd493;
+    --accent-2: #4fbd7a;
+    --accent-3: #a9dfbc;
+    --gradient-primary: linear-gradient(135deg, #6fd493 0%, #4fbd7a 52%, #a9dfbc 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(111, 212, 147, 0.14), rgba(79, 189, 122, 0.07));
     --border-color: rgba(143, 217, 177, 0.13);
-    --border-glow: rgba(87, 255, 143, 0.4);
-    --shadow-glow: 0 22px 60px rgba(87, 255, 143, 0.12);
+    --border-glow: rgba(111, 212, 147, 0.34);
+    --shadow-glow: 0 22px 60px rgba(111, 212, 147, 0.1);
 }
 
 ::selection {
@@ -2281,7 +2282,7 @@ select:focus-visible {
 }
 
 .process-timeline::before {
-    background: linear-gradient(180deg, #57ff8f, #35e982, #a7ffc4);
+    background: linear-gradient(180deg, #6fd493, #4fbd7a, #a9dfbc);
 }
 
 .process-step {
