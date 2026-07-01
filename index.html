@@ -309,8 +309,10 @@
                         <h3>Request Your AI Audit</h3>
                         <p>Takes 60 seconds. We'll follow up within 24 hours.</p>
                     </div>
-                    <form class="audit-form" id="auditForm">
+                    <form class="audit-form" id="auditForm" action="https://formspree.io/f/xeebrnaz" method="POST">
                         <input type="hidden" name="form_type" value="ai_opportunity_audit">
+                        <input type="hidden" name="_subject" value="Free AI Audit Request — builtwithai.ca">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-group">
                             <label for="audit-name">Your Name</label>
                             <input type="text" id="audit-name" name="name" required placeholder="Jane Smith">
@@ -362,7 +364,10 @@
                 <p class="section-desc">Tell us about your business, your workflows, and what you are hoping AI can help with. We'll get back to you within 24 hours with ideas on how we can help.</p>
             </div>
             <div class="contact-grid">
-                <form class="contact-form animate-on-scroll" id="contactForm">
+                <form class="contact-form animate-on-scroll" id="contactForm" action="https://formspree.io/f/xeebrnaz" method="POST">
+                    <input type="hidden" name="form_type" value="contact">
+                    <input type="hidden" name="_subject" value="New Inquiry — builtwithai.ca">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required placeholder="John Smith">

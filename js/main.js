@@ -1,4 +1,8 @@
-﻿// ===== Built with AI - Main JavaScript =====
+// ===== Built with AI - Main JavaScript =====
+
+// Formspree endpoint shared by every form on the site.
+// If this is ever cleared, forms fall back to opening the visitor's email app.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeebrnaz';
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
@@ -16,13 +20,13 @@ function initNavbar() {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         lastScroll = currentScroll;
     }, { passive: true });
 }
@@ -87,52 +91,46 @@ function initScrollAnimations() {
     }
 }
 
-// ===== Contact Form =====
-function initContactForm() {
-    const form = document.getElementById('contactForm');
-    if (!form) return;
-
+// ===== Shared Form Submission =====
+// Submits to Formspree when configured; otherwise opens the visitor's email
+// app with a pre-filled message. buildMailto(formData) returns a mailto: URL.
+function wireForm(form, submitBtn, buildMailto) {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const submitBtn = document.getElementById('submitBtn');
         const btnText = submitBtn.querySelector('.btn-text');
         const btnLoading = submitBtn.querySelector('.btn-loading');
 
-        // Show loading state
         btnText.style.display = 'none';
         btnLoading.style.display = 'inline';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
 
+        const formData = new FormData(form);
+
         try {
-            const formData = new FormData(form);
-            
-            // Send via mailto as primary method (works without Formspree setup)
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const business = formData.get('business');
-            const message = formData.get('message');
-            
-            const subject = encodeURIComponent('New Inquiry from ' + name + (business ? ' - ' + business : ''));
-            const body = encodeURIComponent(
-                'Name: ' + name + '\n' +
-                'Email: ' + email + '\n' +
-                'Business: ' + (business || 'N/A') + '\n\n' +
-                'Message:\n' + message
-            );
-            
-            window.location.href = 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
-            
-            // Show success after a brief delay
-            setTimeout(() => {
+            if (FORMSPREE_ENDPOINT) {
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) {
+                    throw new Error('Formspree responded with ' + response.status);
+                }
                 form.reset();
                 document.getElementById('successModal').classList.add('active');
-            }, 500);
-
+            } else {
+                window.location.href = buildMailto(formData);
+                setTimeout(() => {
+                    form.reset();
+                    document.getElementById('successModal').classList.add('active');
+                }, 500);
+            }
         } catch (error) {
             console.error('Form submission error:', error);
-            alert('Something went wrong. Please email us directly at info@builtwithai.ca');
+            // Fall back to the visitor's email app so the message isn't lost
+            window.location.href = buildMailto(formData);
         } finally {
             btnText.style.display = 'inline';
             btnLoading.style.display = 'none';
@@ -142,56 +140,51 @@ function initContactForm() {
     });
 }
 
+// ===== Contact Form =====
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    wireForm(form, document.getElementById('submitBtn'), (formData) => {
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const business = formData.get('business');
+        const message = formData.get('message');
+
+        const subject = encodeURIComponent('New Inquiry from ' + name + (business ? ' - ' + business : ''));
+        const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Business: ' + (business || 'N/A') + '\n\n' +
+            'Message:\n' + message
+        );
+
+        return 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
+    });
+}
+
 // ===== Audit Form =====
 function initAuditForm() {
     const form = document.getElementById('auditForm');
     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    wireForm(form, document.getElementById('auditSubmitBtn'), (formData) => {
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const business = formData.get('business');
+        const tools = formData.get('current_tools');
 
-        const submitBtn = document.getElementById('auditSubmitBtn');
-        const btnText = submitBtn.querySelector('.btn-text');
-        const btnLoading = submitBtn.querySelector('.btn-loading');
+        const subject = encodeURIComponent('Free AI Opportunity Audit Request - ' + name + (business ? ' (' + business + ')' : ''));
+        const body = encodeURIComponent(
+            'AI OPPORTUNITY AUDIT REQUEST\n' +
+            '============================\n\n' +
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Business: ' + (business || 'N/A') + '\n\n' +
+            'Tools, Workflows, or AI Ideas:\n' + (tools || 'Not specified')
+        );
 
-        btnText.style.display = 'none';
-        btnLoading.style.display = 'inline';
-        submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.7';
-
-        try {
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const business = formData.get('business');
-            const tools = formData.get('current_tools');
-
-            const subject = encodeURIComponent('Free AI Opportunity Audit Request - ' + name + (business ? ' (' + business + ')' : ''));
-            const body = encodeURIComponent(
-                'AI OPPORTUNITY AUDIT REQUEST\n' +
-                '============================\n\n' +
-                'Name: ' + name + '\n' +
-                'Email: ' + email + '\n' +
-                'Business: ' + (business || 'N/A') + '\n\n' +
-                'Tools, Workflows, or AI Ideas:\n' + (tools || 'Not specified')
-            );
-
-            window.location.href = 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
-
-            setTimeout(() => {
-                form.reset();
-                document.getElementById('successModal').classList.add('active');
-            }, 500);
-
-        } catch (error) {
-            console.error('Audit form submission error:', error);
-            alert('Something went wrong. Please email us directly at info@builtwithai.ca');
-        } finally {
-            btnText.style.display = 'inline';
-            btnLoading.style.display = 'none';
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = '1';
-        }
+        return 'mailto:info@builtwithai.ca?subject=' + subject + '&body=' + body;
     });
 }
 
