@@ -199,8 +199,18 @@
     line-height: 1.6;
 }
 
+/* Visually hidden but still keyboard-focusable */
 .checkbox-label input[type="checkbox"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkbox-label input[type="checkbox"]:focus-visible + .checkmark {
+    outline: 3px solid rgba(87, 255, 143, 0.82);
+    outline-offset: 3px;
 }
 
 .checkmark {
@@ -502,4 +512,12 @@
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark {
     border-color: var(--brand-mint);
+}
+
+@media (max-width: 768px) {
+    /* Match the 16px mobile input size from styles.css so iOS doesn't zoom;
+       this file loads later, so its select rule would otherwise win */
+    .form-group select {
+        font-size: 16px;
+    }
 }

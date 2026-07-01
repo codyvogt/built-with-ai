@@ -6,14 +6,22 @@
     <title>Built with AI &mdash; Custom Apps, Agentic Workflows &amp; AI Consulting</title>
     <meta name="description" content="Built with AI helps businesses design and build custom apps, agentic workflows, automations, AI agents, and practical AI adoption roadmaps.">
     <meta name="keywords" content="AI consulting, agentic workflows, custom apps, AI agents, business automation, AI software development, AI roadmap">
-    <meta name="theme-color" content="#16364d">
+    <meta name="theme-color" content="#081d2b">
+    <link rel="canonical" href="https://builtwithai.ca/">
     <meta property="og:title" content="Built with AI &mdash; Apps, Agents &amp; AI Workflows">
     <meta property="og:description" content="Custom apps, agentic workflows, automation, and practical AI consulting built around how your business actually works.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://builtwithai.ca/images/builtwithai-ca-block-no-star-muted.png">
+    <meta property="og:url" content="https://builtwithai.ca/">
+    <meta property="og:image" content="https://builtwithai.ca/images/linkedin-ad-1200x627.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Built with AI &mdash; Apps, Agents &amp; AI Workflows">
+    <meta name="twitter:description" content="Custom apps, agentic workflows, automation, and practical AI consulting built around how your business actually works.">
+    <meta name="twitter:image" content="https://builtwithai.ca/images/linkedin-ad-1200x627.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/builtwithai-icon-block-no-star-muted.png">
 </head>
@@ -22,7 +30,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#" class="logo" aria-label="builtwithai.ca home">
-                <img class="logo-image" src="images/builtwithai-ca-block-no-star-muted.png" alt="builtwithai.ca">
+                <img class="logo-image" src="images/builtwithai-ca-block-no-star-muted.png" alt="builtwithai.ca" width="2171" height="466">
             </a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
                 <span></span>
@@ -301,7 +309,7 @@
                         <h3>Request Your AI Audit</h3>
                         <p>Takes 60 seconds. We'll follow up within 24 hours.</p>
                     </div>
-                    <form class="audit-form" id="auditForm" action="https://formspree.io/f/xplaceholder" method="POST">
+                    <form class="audit-form" id="auditForm">
                         <input type="hidden" name="form_type" value="ai_opportunity_audit">
                         <div class="form-group">
                             <label for="audit-name">Your Name</label>
@@ -354,7 +362,7 @@
                 <p class="section-desc">Tell us about your business, your workflows, and what you are hoping AI can help with. We'll get back to you within 24 hours with ideas on how we can help.</p>
             </div>
             <div class="contact-grid">
-                <form class="contact-form animate-on-scroll" id="contactForm" action="https://formspree.io/f/xplaceholder" method="POST">
+                <form class="contact-form animate-on-scroll" id="contactForm">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required placeholder="John Smith">
@@ -419,7 +427,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo" aria-label="builtwithai.ca home">
-                        <img class="logo-image" src="images/builtwithai-ca-block-no-star-muted.png" alt="builtwithai.ca">
+                        <img class="logo-image" src="images/builtwithai-ca-block-no-star-muted.png" alt="builtwithai.ca" width="2171" height="466" loading="lazy">
                     </a>
                     <p>Custom apps, agentic workflows, automation, and practical AI consulting designed around how your business works.</p>
                 </div>
@@ -448,9 +456,9 @@
 
     <!-- Success Modal -->
     <div class="modal-overlay" id="successModal">
-        <div class="modal">
-            <div class="modal-icon">&#x2713;</div>
-            <h3>Message Sent!</h3>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+            <div class="modal-icon" aria-hidden="true">&#x2713;</div>
+            <h3 id="successModalTitle">Message Sent!</h3>
             <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
             <button class="btn btn-primary" onclick="document.getElementById('successModal').classList.remove('active')">Got It</button>
         </div>

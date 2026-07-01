@@ -38,6 +38,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -48,6 +50,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -76,6 +79,11 @@ ul { list-style: none; }
 .section {
     padding: 120px 0;
     position: relative;
+}
+
+/* Keep anchored sections clear of the fixed navbar even without JS scrolling */
+section[id] {
+    scroll-margin-top: 96px;
 }
 
 .section-header {
@@ -699,27 +707,12 @@ ul { list-style: none; }
     font-family: var(--font-mono);
     font-size: 1.2rem;
     font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    color: var(--accent-1);
+    background: var(--bg-card);
+    border: 1px solid rgba(99, 102, 241, 0.3);
     border-radius: var(--radius-md);
-    background-color: var(--bg-card);
     position: relative;
     z-index: 1;
-}
-
-.step-number {
-    background: var(--bg-card);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-}
-
-.step-number {
-    -webkit-text-fill-color: unset;
-    background: var(--bg-card);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: var(--accent-1);
 }
 
 .step-content h3 {
@@ -2389,7 +2382,31 @@ select:focus-visible {
         background: rgba(87, 255, 143, 0.02);
     }
 
+    /* Restore the CTA gradient inside the mobile menu — without this the
+       generic .nav-links a background wins and leaves dark text on a dark pill */
+    .nav-links a.nav-cta {
+        background: var(--gradient-primary);
+        border-color: rgba(167, 255, 196, 0.46);
+    }
+
     .stat:not(:first-child) {
         border-top-color: rgba(143, 217, 177, 0.11);
+    }
+
+    /* 16px inputs prevent iOS Safari from auto-zooming on focus */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 16px;
+    }
+
+    /* Lighter blur load for mobile GPUs */
+    .hero-orb {
+        filter: blur(56px);
+        opacity: 0.5;
+    }
+
+    .hero-orb-3 {
+        display: none;
     }
 }
